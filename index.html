@@ -20,6 +20,12 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="root"></div>
+    <div id="root">
+        <div v-if="mails.length === items">
+            <ul>
+                <li v-for="mail in mails">{{mail}}</li>
+            </ul>
+        </div>
+    </div>
 </body>
 </html>
