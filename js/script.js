@@ -1,4 +1,4 @@
-const link = "https://flynn.boolean.careers/exercises/api/random/mail";
+const endpoint = "https://flynn.boolean.careers/exercises/api/random/mail";
 
 const { createApp } = Vue;
 
@@ -10,10 +10,12 @@ const app = createApp({
     };
   },
   created() {
-    axios.get(link).then((res) => {
-      for (let i = 0; i < this.items; i++) {
+    for (let i = 0; i < this.items; i++) {
+      axios.get(endpoint).then((res) => {
         this.mails.push(res.data.response);
-      }
-    });
+      });
+    }
   },
-}).mount("#root");
+});
+
+app.mount("#root");

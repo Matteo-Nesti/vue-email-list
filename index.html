@@ -23,7 +23,8 @@
     <div id="root">
         <div v-if="mails.length === items">
             <ul>
-                <li v-for="mail in mails">{{mail}}</li>
+                <!-- usare la i per dare qualcosa di unico -->
+                <li v-for="(mail, i) in mails" :key="i">{{mail}}</li>
             </ul>
         </div>
     </div>
